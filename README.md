@@ -10,9 +10,9 @@ id: life
 ```
 `````
 
-`````
 
 No templates. No Dataview queries. No external account.  
+
 Just projects, dates, priorities, task notes, and a focused Todoist-style workflow inside your Obsidian vault.
 
 ![Demo](demo.gif)
@@ -113,9 +113,7 @@ id: life
 ```
 ````
 
-````
-
-```markdown
+````markdown
 # Startup Dashboard
 
 ```todoapp
@@ -123,16 +121,13 @@ id: startup
 ```
 ````
 
-````
 
-```markdown
+````markdown
 # Writing Projects
 
 ```todoapp
 id: writing
 ```
-````
-
 ````
 
 ## Privacy
