@@ -13,8 +13,7 @@ export default tseslint.config(
 		'main.js',
 		'package.json',
 		'package-lock.json',
-		'tsconfig.json',
-	]),
+		'tsconfig.json']),
 	{
 		languageOptions: {
 			globals: {
@@ -22,7 +21,7 @@ export default tseslint.config(
 			},
 			parserOptions: {
 				projectService: {
-					allowDefaultProject: ['eslint.config.mts', 'manifest.json', 'src/main.tsx'],
+					allowDefaultProject: ['eslint.config.mts', 'manifest.json'],
 				},
 				tsconfigRootDir: import.meta.dirname,
 				extraFileExtensions: ['.json'],
