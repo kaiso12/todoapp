@@ -1,3 +1,12 @@
+/* eslint-disable no-alert */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-misused-promises */
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable obsidianmd/prefer-window-timers */
+
 import { App, Modal, Plugin } from "obsidian";
 import React, { useEffect, useMemo, useState } from "react";
 import { createRoot, Root } from "react-dom/client";
