@@ -256,19 +256,19 @@
   display: block;
   width: 100%;
   margin: 0;
-  border: 0 !important;
-  background: transparent !important;
+  border: 0;
+  background: transparent;
   color: var(--text-normal);
-  padding: 0 !important;
+  padding: 0;
   font-weight: 500;
   font-size: 13px;
   line-height: 1.35;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .todoapp-task-title-input:focus {
   outline: none;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .todoapp-task-meta {
@@ -415,9 +415,9 @@
 .todoapp .todoapp-task select,
 .todoapp .todoapp-project-actions button,
 .todoapp .todoapp-project-rename-input {
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  text-shadow: none !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  text-shadow: none;
 }
 
 .todoapp .todoapp-project-link,
@@ -428,10 +428,10 @@
 .todoapp .todoapp-delete,
 .todoapp .todoapp-project-actions button {
   appearance: none;
-  border: 0 !important;
+  border: 0;
   outline: 0;
-  background: transparent !important;
-  background-image: none !important;
+  background: transparent;
+  background-image: none;
   min-height: 0;
 }
 
@@ -442,8 +442,8 @@
 .todoapp .todoapp-note:hover,
 .todoapp .todoapp-delete:hover,
 .todoapp .todoapp-project-actions button:hover {
-  background: transparent !important;
-  box-shadow: none !important;
+  background: transparent;
+  box-shadow: none;
 }
 
 .todoapp-task-actions {
@@ -456,32 +456,32 @@
 }
 
 .todoapp-note {
-  color: var(--text-muted) !important;
+  color: var(--text-muted);
   font-size: 12px;
 }
 
 .todoapp-note:hover {
-  color: var(--text-normal) !important;
+  color: var(--text-normal);
   text-decoration: underline;
 }
 
 .todoapp-delete {
-  color: var(--text-faint) !important;
+  color: var(--text-faint);
   font-size: 17px;
   line-height: 1;
 }
 
 .todoapp-delete:hover {
-  color: #e44332 !important;
+  color: #e44332;
 }
 
 .todoapp-order-link {
-  color: var(--text-faint) !important;
+  color: var(--text-faint);
   font-size: 10px;
 }
 
 .todoapp-order-link:hover {
-  color: var(--text-muted) !important;
+  color: var(--text-muted);
 }
 
 .todoapp-project-actions {
@@ -493,7 +493,7 @@
 .todoapp-project-actions button {
   color: var(--text-faint);
   cursor: pointer;
-  padding: 0 2px !important;
+  padding: 0 2px;
   font-size: 12px;
   line-height: 1;
 }
@@ -505,19 +505,19 @@
 
 .todoapp-project-rename-input {
   width: 88px;
-  border: 0 !important;
-  border-bottom: 1px solid var(--background-modifier-border) !important;
-  border-radius: 0 !important;
-  background: transparent !important;
+  border: 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-radius: 0;
+  background: transparent;
   color: var(--text-normal);
-  padding: 1px 2px !important;
+  padding: 1px 2px;
   font-size: 12px;
   min-height: 0;
 }
 
 .todoapp-project-rename-input:focus {
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
 }
 
 
@@ -532,40 +532,40 @@
 
 .todoapp-priority-link.priority-4,
 .todoapp-inline-priority.priority-4 {
-  color: var(--text-faint) !important;
-  font-weight: 400 !important;
+  color: var(--text-faint);
+  font-weight: 400;
 }
 
 .todoapp-date-link.is-overdue {
-  color: #e44332 !important;
+  color: #e44332;
   font-weight: 700;
 }
 
 .todoapp-note {
   width: 16px;
   text-align: center;
-  color: var(--text-muted) !important;
+  color: var(--text-muted);
   font-size: 13px;
   font-weight: 600;
 }
 
 .todoapp-note:hover {
-  color: var(--text-normal) !important;
+  color: var(--text-normal);
   text-decoration: none;
 }
 
 
 /* publish-polish-v6 */
 .todoapp-note {
-  width: auto !important;
+  width: auto;
   min-width: 42px;
   text-align: left;
-  font-size: 13px !important;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .todoapp-delete {
-  font-size: 20px !important;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -577,13 +577,13 @@
 }
 
 .todoapp-count.is-today-count {
-  color: #9acd32 !important;
+  color: #9acd32;
   font-weight: 800;
 }
 
 .todoapp-note.has-note {
-  font-weight: 800 !important;
-  color: var(--text-normal) !important;
+  font-weight: 800;
+  color: var(--text-normal);
 }
 
 
@@ -592,14 +592,14 @@
   display: inline-block;
   margin-left: 4px;
   transform: translateY(-0.15em);
-  font-size: 9px !important;
+  font-size: 9px;
   line-height: 1;
   opacity: 0.72;
   vertical-align: super;
 }
 
 .todoapp-count.is-today-count {
-  color: #9acd32 !important;
+  color: #9acd32;
   font-weight: 800;
   opacity: 1;
 }
@@ -608,7 +608,7 @@
   display: inline-block;
   margin-left: 4px;
   transform: translateY(-0.15em);
-  font-size: 9px !important;
+  font-size: 9px;
   line-height: 1;
   opacity: 0.65;
   vertical-align: super;
@@ -643,7 +643,7 @@
   resize: vertical;
   border: 0;
   outline: none;
-  box-shadow: none !important;
+  box-shadow: none;
   background: var(--background-primary);
   color: var(--text-normal);
   font: inherit;
@@ -654,7 +654,7 @@
 
 .todoapp-note-modal-textarea:focus {
   outline: none;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .todoapp-note-modal-footer {
@@ -669,7 +669,7 @@
 .todoapp-note-modal-save,
 .todoapp-note-modal-close {
   border: 0;
-  box-shadow: none !important;
+  box-shadow: none;
   border-radius: 6px;
   padding: 5px 10px;
   cursor: pointer;
@@ -694,21 +694,21 @@
 /* counters-branding-v9 */
 .todoapp-count,
 .todoapp-time-tabs button span {
-  font-weight: 400 !important;
+  font-weight: 400;
 }
 
 .todoapp-count.is-today-count {
-  color: #e44332 !important;
-  font-weight: 400 !important;
+  color: #e44332;
+  font-weight: 400;
 }
 
 .todoapp-count.is-tomorrow-count {
-  color: #f39c12 !important;
-  font-weight: 400 !important;
+  color: #f39c12;
+  font-weight: 400;
 }
 
 .todoapp-date-separator.is-today {
-  color: #e44332 !important;
+  color: #e44332;
 }
 
 .todoapp-date-separator.is-today::after {
@@ -716,7 +716,7 @@
 }
 
 .todoapp-date-separator.is-tomorrow {
-  color: #f39c12 !important;
+  color: #f39c12;
 }
 
 .todoapp-date-separator.is-tomorrow::after {
@@ -726,25 +726,25 @@
 .todoapp-date-link.is-today,
 .todoapp-date-link.is-tomorrow,
 .todoapp-date-link.is-overdue {
-  font-weight: 400 !important;
+  font-weight: 400;
 }
 
 
 /* inline-counters-v10 */
 .todoapp-count,
 .todoapp-time-tabs button span {
-  display: inline !important;
-  vertical-align: baseline !important;
-  transform: none !important;
-  line-height: inherit !important;
-  font-size: 11px !important;
+  display: inline;
+  vertical-align: baseline;
+  transform: none;
+  line-height: inherit;
+  font-size: 11px;
   opacity: 0.72;
 }
 
 .todoapp-count {
-  margin-left: 5px !important;
+  margin-left: 5px;
 }
 
 .todoapp-time-tabs button span {
-  margin-left: 5px !important;
+  margin-left: 5px;
 }
