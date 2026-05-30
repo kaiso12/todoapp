@@ -92,7 +92,11 @@ function dateLabel(date?: string) {
   if (date === todayIso()) return "Today";
   if (date === tomorrowIso()) return "Tomorrow";
 
-  const [y, m, d] = date.split("-");
+  const parts = date.split("-");
+  const y = parts[0];
+  const m = parts[1];
+  const d = parts[2];
+
   if (!y || !m || !d) return date;
   return `${d}.${m}.${y}`;
 }
@@ -590,9 +594,12 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
       const updatedTask = next.tasks.find((t) => t.id === task.id) || task;
       if (!updatedTask.notePath) return;
 
+      const notePath = updatedTask.notePath;
+      if (!notePath) return;
+
       new TaskNoteModal(
         store.app,
-        updatedTask.notePath,
+        notePath,
         updatedTask,
         projectName(updatedTask.projectId)
       ).open();
