@@ -93,7 +93,7 @@ function parseBlockId(source: string): string {
     .find((x) => x.startsWith("id:"));
 
   if (idLine) return idLine.replace("id:", "").trim() || "default";
-  return trimmed.split("\n")[0].trim() || "default";
+  return (trimmed.split("\n")[0] ?? "default").trim() || "default";
 }
 
 function dateLabel(date?: string) {
@@ -624,7 +624,7 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
     const project: Project = {
       id: makeId(),
       name: newProjectName.trim(),
-      color: PROJECT_COLORS[data.projects.length % PROJECT_COLORS.length]
+      color: PROJECT_COLORS[data.projects.length % PROJECT_COLORS.length] ?? "#808080"
     };
 
     await update({ ...data, projects: [...data.projects, project] });
