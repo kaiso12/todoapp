@@ -33,6 +33,7 @@ const context = await esbuild.context({
 		js: banner,
 	},
 	entryPoints: ['src/main.tsx'],
+	plugins: [preactAliasPlugin],
 	bundle: true,
 	external: [
 		'obsidian',

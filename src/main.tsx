@@ -57,6 +57,14 @@ const PROJECT_COLORS = [
   "#d35400"
 ];
 
+function eventValue(e: Event) {
+  return (e.currentTarget as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement).value;
+}
+
+function eventChecked(e: Event) {
+  return (e.currentTarget as HTMLInputElement).checked;
+}
+
 function todayIso() {
   return new Date().toISOString().slice(0, 10);
 }
@@ -729,7 +737,7 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
         <input
           className="todoapp-title-input"
           value={data.displayTitle}
-          onChange={(e) => update({ ...data, displayTitle: e.target.value })}
+          onChange={(e) => update({ ...data, displayTitle: eventValue(e) })}
         />
         <span className="todoapp-id">id: {appId}</span>
       </div>
@@ -760,7 +768,7 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
                   className="todoapp-project-rename-input"
                   autoFocus
                   value={renamingProjectName}
-                  onChange={(e) => setRenamingProjectName(e.target.value)}
+                  onChange={(e) => setRenamingProjectName(eventValue(e))}
                   onBlur={() => {
                     setRenamingProjectId(null);
                     setRenamingProjectName("");
@@ -813,7 +821,7 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
           className="todoapp-add-project-input"
           value={newProjectName}
           placeholder="+ project"
-          onChange={(e) => setNewProjectName(e.target.value)}
+          onChange={(e) => setNewProjectName(eventValue(e))}
           onKeyDown={(e) => {
             if (e.key === "Enter") addProject();
           }}
@@ -837,21 +845,21 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
         <input
           value={newTitle}
           placeholder={`Add task to ${projectName(activeProjectForAdd())}...`}
-          onChange={(e) => setNewTitle(e.target.value)}
+          onChange={(e) => setNewTitle(eventValue(e))}
           onKeyDown={(e) => {
             if (e.key === "Enter") addTask();
           }}
         />
 
-        <select value={activeProjectForAdd()} onChange={(e) => setNewProjectId(e.target.value)}>
+        <select value={activeProjectForAdd()} onChange={(e) => setNewProjectId(eventValue(e))}>
           {data.projects.map((p) => (
             <option key={p.id} value={p.id}>{p.name}</option>
           ))}
         </select>
 
-        <input type="date" value={newDue} onChange={(e) => setNewDue(e.target.value)} />
+        <input type="date" value={newDue} onChange={(e) => setNewDue(eventValue(e))} />
 
-        <select value={newPriority} onChange={(e) => setNewPriority(Number(e.target.value) as Priority)}>
+        <select value={newPriority} onChange={(e) => setNewPriority(Number(eventValue(e)) as Priority)}>
           <option value={1}>P1</option>
           <option value={2}>P2</option>
           <option value={3}>P3</option>
@@ -895,14 +903,14 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
                       className="todoapp-checkbox"
                       type="checkbox"
                       checked={task.completed}
-                      onChange={(e) => patchTask(task.id, { completed: e.target.checked })}
+                      onChange={(e) => patchTask(task.id, { completed: eventChecked(e) })}
                     />
 
                     <div className="todoapp-task-main">
                       <input
                         className="todoapp-task-title-input"
                         value={task.title}
-                        onChange={(e) => patchTask(task.id, { title: e.target.value })}
+                        onChange={(e) => patchTask(task.id, { title: eventValue(e) })}
                       />
 
                       <div className="todoapp-task-meta">
@@ -913,7 +921,7 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
                             value={task.projectId}
                             onBlur={stopInline}
                             onChange={(e) => {
-                              patchTask(task.id, { projectId: e.target.value });
+                              patchTask(task.id, { projectId: eventValue(e) });
                               stopInline();
                             }}
                           >
@@ -939,7 +947,7 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
                             value={task.due || ""}
                             onBlur={stopInline}
                             onChange={(e) => {
-                              patchTask(task.id, { due: e.target.value || undefined });
+                              patchTask(task.id, { due: eventValue(e) || undefined });
                               stopInline();
                             }}
                           />
@@ -964,7 +972,7 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
                             value={task.priority}
                             onBlur={stopInline}
                             onChange={(e) => {
-                              patchTask(task.id, { priority: Number(e.target.value) as Priority });
+                              patchTask(task.id, { priority: Number(eventValue(e)) as Priority });
                               stopInline();
                             }}
                           >
