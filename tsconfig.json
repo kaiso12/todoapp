@@ -17,7 +17,8 @@
       "ES2021",
       "DOM"
     ],
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   },
   "include": [
     "src/**/*.ts",

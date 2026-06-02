@@ -8,8 +8,8 @@
 /* eslint-disable obsidianmd/prefer-window-timers */
 
 import { App, Modal, Plugin } from "obsidian";
-import React, { useEffect, useMemo, useState } from "react";
-import { createRoot, Root } from "react-dom/client";
+import { useEffect, useMemo, useState } from "preact/hooks";
+import { render } from "preact";
 
 type Priority = 1 | 2 | 3 | 4;
 type TimeFilter = "today" | "tomorrow" | "week" | "all";
@@ -1009,7 +1009,7 @@ function TodoWidget(props: { store: TodoStore; appId: string }) {
 }
 
 export default class TodoAppPlugin extends Plugin {
-  roots: Root[] = [];
+  containers: HTMLElement[] = [];
 
   async onload() {
     const store = new TodoStore(this.app);
@@ -1017,18 +1017,17 @@ export default class TodoAppPlugin extends Plugin {
     this.registerMarkdownCodeBlockProcessor("todoapp", async (source, el) => {
       const appId = parseBlockId(source);
       const container = el.createDiv();
-      const root = createRoot(container);
 
-      this.roots.push(root);
-      root.render(<TodoWidget store={store} appId={appId} />);
+      this.containers.push(container);
+      render(<TodoWidget store={store} appId={appId} />, container);
     });
   }
 
   onunload() {
-    for (const root of this.roots) {
-      root.unmount();
+    for (const container of this.containers) {
+      render(null, container);
     }
 
-    this.roots = [];
+    this.containers = [];
   }
 }
